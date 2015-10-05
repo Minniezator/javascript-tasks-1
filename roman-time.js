@@ -7,11 +7,6 @@ function changeIfNulle(num)
 	return num;
 }
 
-function printTime(hours, minutes)
-{
-	console.log(hours + ':' + minutes);
-}
-
 function convertToRoman(num)
 {
 	var units = ['', 'I', 'II','III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'];
@@ -24,11 +19,11 @@ function convertToRoman(num)
 	return changeIfNulle(romanTime);
 }
 
-if(hours >= 0 || hours <= 23 || minutes >= 0 || minutes <= 59)
+if(hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59)
 {
 	var romanHours = convertToRoman(hours);
 	var romanMinutes = convertToRoman(minutes);
-	printTime(romanHours, romanMinutes);
+	console.log(romanHours + ':' + romanMinutes);
 }
 else
 {

@@ -24,13 +24,13 @@ function convertToRoman(num)
 	return changeIfNulle(romanTime);
 }
 
-if(hours < 0 || hours > 23 || minutes < 0 || minutes > 59 || isNaN(hours) || isNaN(minutes))
-{
-	console.log('ОШИБКА! Время указано не верно.\nНа вход подается два числа, разделенных пробелом: часы и минуты.\nЧасы - число от 0 до 23.\nМинуты - число от 0 до 59.');
-}
-else
+if(hours >= 0 || hours <= 23 || minutes >= 0 || minutes <= 59)
 {
 	var romanHours = convertToRoman(hours);
 	var romanMinutes = convertToRoman(minutes);
 	printTime(romanHours, romanMinutes);
+}
+else
+{
+	console.log('ОШИБКА! Время указано не верно.\nНа вход подается два числа, разделенных пробелом: часы и минуты.\nЧасы - число от 0 до 23.\nМинуты - число от 0 до 59.');	
 }
